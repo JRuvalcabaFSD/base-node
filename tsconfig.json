@@ -22,11 +22,11 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@/types/*": ["src/types/*"],
-      "@/utils/*": ["src/utils/*"],
-      "@/controllers/*": ["src/controllers/*"],
-      "@/services/*": ["src/services/*"],
-      "@/middlewares/*": ["src/middlewares/*"]
+      "@application": ["src/application/index.ts"],
+      "@domain": ["src/domain/index.ts"],
+      "@infrastructure": ["src/infrastructure/index.ts"],
+      "@presentation": ["src/presentation/index.ts"],
+      "@shared": ["src/shared/index.ts"]
     },
 
     // Additional strict checks
