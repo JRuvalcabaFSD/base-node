@@ -24,11 +24,11 @@
     "baseUrl": "./src",
     "paths": {
       "@/*": ["./*"],
-      "@/types/*": ["./types/*"],
-      "@/utils/*": ["./utils/*"],
-      "@/controllers/*": ["./controllers/*"],
-      "@/services/*": ["./services/*"],
-      "@/middlewares/*": ["./middlewares/*"]
+      "@application": ["./application/index.ts"],
+      "@domain": ["./domain/index.ts"],
+      "@infrastructure": ["./infrastructure/index.ts"],
+      "@presentation": ["./presentation/index.ts"],
+      "@shared": ["./shared/index.ts"]
     },
 
     // Additional strict checks
