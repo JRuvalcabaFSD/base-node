@@ -2,6 +2,8 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "CommonJS",
+    "moduleResolution": "node",
+
     "lib": ["ES2022"],
     "strict": true,
     "esModuleInterop": true,
@@ -14,22 +16,20 @@
     "declarationMap": true,
     "removeComments": true,
     "noEmitOnError": true,
-    "resolveJsonModule": true,
-    "allowJs": true,
-    "checkJs": false,
 
-    // Path mapping for cleaner imports
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
       "@application": ["src/application/index.ts"],
+      "@config": ["src/config/index.ts"],
+      "@container": ["src/container/index.ts"],
       "@domain": ["src/domain/index.ts"],
       "@infrastructure": ["src/infrastructure/index.ts"],
+      "@interfaces": ["src/interfaces/index.ts"],
       "@presentation": ["src/presentation/index.ts"],
       "@shared": ["src/shared/index.ts"]
     },
 
-    // Additional strict checks
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -37,7 +37,6 @@
     "noUnusedParameters": true,
     "exactOptionalPropertyTypes": true,
 
-    // Types for development
     "types": ["jest", "node"]
   },
   "include": ["src/**/*.ts", "tests/**/*.ts"],
