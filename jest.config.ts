@@ -14,7 +14,15 @@ const config: Config = {
   collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: ['src/**/*.{ts,js}', '!src/**/*.d.ts', '!src/**/*.test.{ts,js}', '!src/**/*.spec.{ts,js}'],
+  collectCoverageFrom: [
+    'src/**/*.{ts,js}',
+    '!src/**/*.d.ts',
+    '!src/**/*.test.{ts,js}',
+    '!src/**/*.spec.{ts,js}',
+    '!src/**/index.{ts,js}',
+    '!src/**/*.interface.{ts,js}',
+    '!src/**/app.{ts,js}',
+  ],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
@@ -26,14 +34,14 @@ const config: Config = {
   coverageReporters: ['json', 'lcov', 'text', 'clover', 'html'],
 
   // An object that configures minimum threshold enforcement for coverage results
-  // coverageThreshold: {
-  //   global: {
-  //     branches: 80,
-  //     functions: 70,
-  //     lines: 80,
-  //     statements: 80,
-  //   },
-  // },
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80,
+    },
+  },
 
   // The root directory that Jest should scan for tests and modules within
   rootDir: '.',
@@ -42,7 +50,7 @@ const config: Config = {
   roots: ['<rootDir>/src', '<rootDir>/tests'],
 
   // The glob patterns Jest uses to detect test files
-  testMatch: ['**/tests/**/*.{ts,js}', '**/?(*.)+(spec|test).{ts,js}'],
+  testMatch: ['**/tests/**/*.{ts,js}'],
 
   // A map from regular expressions to paths to transformers
   transform: {
@@ -60,11 +68,14 @@ const config: Config = {
   // Module name mapping for path aliases
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
-    '^@application$': '<rootDir>/application/index.ts',
-    '^@domain$': '<rootDir>/domain/index.ts',
-    '^@infrastructure$': '<rootDir>/infrastructure/index.ts',
-    '^@presentation$': '<rootDir>/presentation/index.ts',
-    '^@shared$': '<rootDir>/shared/index.ts',
+    '^@application$': '<rootDir>/src/application/index.ts',
+    '^@config$': '<rootDir>/src/config/index.ts',
+    '^@container$': '<rootDir>/src/container/index.ts',
+    '^@domain$': '<rootDir>/src/domain/index.ts',
+    '^@infrastructure$': '<rootDir>/src/infrastructure/index.ts',
+    '^@interfaces$': '<rootDir>/src/interfaces/index.ts',
+    '^@presentation$': '<rootDir>/src/presentation/index.ts',
+    '^@shared$': '<rootDir>/src/shared/index.ts',
   },
 
   // Setup files after environment
