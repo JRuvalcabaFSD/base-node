@@ -16,6 +16,7 @@
     "removeComments": true,
     "noEmitOnError": true,
     "resolveJsonModule": true,
+    "moduleResolution": "node",
     "allowJs": true,
     "checkJs": false,
     "noEmit": false,
@@ -25,8 +26,11 @@
     "paths": {
       "@/*": ["./*"],
       "@application": ["./application/index.ts"],
+      "@config": ["./config/index.ts"],
+      "@container": ["./container/index.ts"],
       "@domain": ["./domain/index.ts"],
       "@infrastructure": ["./infrastructure/index.ts"],
+      "@interfaces": ["./interfaces/index.ts"],
       "@presentation": ["./presentation/index.ts"],
       "@shared": ["./shared/index.ts"]
     },
